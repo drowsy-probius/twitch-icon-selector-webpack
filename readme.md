@@ -1,7 +1,13 @@
 # webpack
+[twitch-icon-selector](https://github.com/drowsy-probius/twitch-icon-selector)의 inject내의 코드를 webpack를 사용하여 개발하기 위한 repository입니다.  
 
 
 # Development
+```bash
+npm install --save-dev --location=project
+```
+
+
 `betterttv`소스코드에서 영향을 많이 받아서 개발 방식도 많이 참고를 하였다. webpack를 사용해서 모든 파일을 하나의 `js`파일로 합친다. 그래서 테스트할 때도 webpack를 사용한다.
 
 
@@ -26,7 +32,7 @@ npm start
 (() => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'http://localhost:port/twitchIconSelector.js';
+    script.src = 'http://localhost:11223/twitchIconSelector.js';
     const head = document.getElementsByTagName('head')[0];
     if (!head) return;
     head.appendChild(script);

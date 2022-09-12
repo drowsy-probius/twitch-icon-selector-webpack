@@ -6,22 +6,21 @@
   "type": "module",
   "scripts": {
     "start": "webpack serve --mode development",
-    "postinstall": "node ./dev/post-install.js",
     "build": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "lint": "eslint . && prettier --check ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drowsy-probius/twitch-icon-selector.git"
+    "url": "git+https://github.com/drowsy-probius/twitch-icon-selector-webpack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drowsy-probius/twitch-icon-selector/issues"
+    "url": "https://github.com/drowsy-probius/twitch-icon-selector-webpack/issues"
   },
-  "homepage": "https://github.com/drowsy-probius/twitch-icon-selector#readme",
+  "homepage": "https://github.com/drowsy-probius/twitch-icon-selector-webpack#readme",
   "devDependencies": {
     "eslint": "^8.23.1",
     "eslint-plugin-react": "^7.31.8",

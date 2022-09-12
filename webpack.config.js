@@ -21,16 +21,6 @@ export default async (env, argv) => {
           protocol: 'ws',
         },
       },
-      setupMiddlewares: (middlewares) => {
-        middlewares.push((req, res) =>
-          got
-            .stream(`${ENDPOINT}${req.path}`)
-            .on('error', () => res.sendStatus(404))
-            .pipe(res)
-        );
-
-        return middlewares;
-      },
     },
     entry: {
       twitchIconSelector: [
@@ -42,7 +32,7 @@ export default async (env, argv) => {
       path: path.resolve("./build"),
     },
     optimization: {
-      minimize: false,
+      minimize: true,
     },
     devtool: "eval", // "hidden-source-map" for production
 
