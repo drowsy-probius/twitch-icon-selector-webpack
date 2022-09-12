@@ -1,5 +1,18 @@
-import Browser from "webextension-polyfill";
+(async () => {
+  if(![
+    "www.twitch.tv",
+    "clips.twitch.tv",
+    "embed.twitch.tv",
+    "dashboard.twitch.tv",
+  ].includes(window.location.hostname)) return;
 
+  if(window.twitchIconSelector) return; 
 
-console.log("hello!");
-console.log(Browser);
+  const {default: logger} = await import("./utils/logger");
+  
+  logger.log(`script loaded!`);
+
+  window.twitchIconSelector = {
+
+  }
+})();
