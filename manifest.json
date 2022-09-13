@@ -1,0 +1,43 @@
+{
+  "name": "트위치 커스텀 아이콘 선택기",
+  "description": "호환되는 트위치 스트리머의 채팅창에서 커스텀 아이콘을 사용할 수 있습니다.",
+  "version": "1.1.0",
+  "version_name": "2022.09.12",
+  "manifest_version": 2,
+  "background": {
+    "js": [
+      "./node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
+      "./background.js"
+    ]
+  },
+
+  "icons": {
+    "16": "./public/16.icon.png",
+    "32": "./public/32.icon.png",
+    "48": "./public/48.icon.png",
+    "128": "./public/128.icon.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "트위치 아이콘 선택기",
+    "default_popup": "./setting/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.twitch.tv/*",
+        "*://twitch.tv/*"
+      ],
+      "css": [
+        "./inject/style.css"
+      ],
+      "js": [
+        "./build/twitchIconSelector.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

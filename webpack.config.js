@@ -1,9 +1,8 @@
 import path from "path";
-import got from "got";
+import CopyPlugin from "copy-webpack-plugin";
 
 export default async (env, argv) => {
   const PORT = 11223;
-  const ENDPOINT = "https://api.probius.dev/twitch-icons/cdn/";
 
   return {
     devServer: {
@@ -35,6 +34,12 @@ export default async (env, argv) => {
       minimize: true,
     },
     devtool: "eval", // "hidden-source-map" for production
-
+    plugins: [
+      new CopyPlugin({
+        patterns: [{
+          from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js',
+        }]
+      })
+    ],
   }
 }
